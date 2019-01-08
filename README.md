@@ -6,10 +6,7 @@ Zero-config TypeScript compilation for web browsers. Sped substantially thanks t
 
 ```html
 <!-- include ts-browser -->
-<script
-  type="text/javascript"
-  src="http://unpkg.com/ts-browser@latest"
-></script>
+<script type="text/javascript" src="http://unpkg.com/ts-browser@latest"></script>
 
 <!-- include your TypeScript file -->
 <script type="text/typescript" src="your/typescript/file.ts"></script>
