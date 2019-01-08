@@ -1,7 +1,10 @@
 {
   "name": "ts-browser",
-  "version": "1.0.0",
-  "unpkg": "dist/ts-browser.js",
+  "version": "1.0.1",
+  "unpkg": "dist/index.min.js",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "description": "Run TypeScript in the browser via <script type='text/typescript'>",
   "author": "Harry Solovay <harrysolovay@gmail.com> (harrysolovay.com)",
