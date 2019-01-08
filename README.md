@@ -2,7 +2,7 @@
 
 Zero-config TypeScript compilation for web browsers. Sped substantially thanks to web workers and service workers, ts-browser is equipped for production use in small projects. Beyond its speed, the minified build is less than 10kb!
 
-### About
+### Usage
 
 ```html
 <!-- include ts-browser -->
