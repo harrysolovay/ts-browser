@@ -15,6 +15,6 @@ Zero-config TypeScript compilation for web browsers. Sped substantially thanks t
 <script type="text/typescript" src="your/typescript/file.ts"></script>
 ```
 
-### Note
+### Can I use?
 
 Web Workers are––at the time of writing this README––supported by 92.74% of web browsers. Blobs (another API used by ts-browser) are supported by 93.02% of browsers. That being said, don't give too much weight to supporting the absent 7%!
