@@ -1,0 +1,61 @@
+{
+  "name": "ts-browser",
+  "version": "1.0.0",
+  "main": "lib/ts-browser.js",
+  "unpkg": "dist/ts-browser.js",
+  "module": "es/ts-browser.js",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "src"
+  ],
+  "license": "MIT",
+  "description": "Run TypeScript in the browser via <script type='text/typescript'>",
+  "author": "Harry Solovay <harrysolovay@gmail.com> (harrysolovay.com)",
+  "keywords": [
+    "typescript",
+    "browser",
+    "runtime",
+    "ts",
+    "compiler",
+    "transpiler",
+    "web",
+    "worker",
+    "thread"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.2.3",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.12.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "clean": "rm -rf dist demo/ts-browser.js",
+    "predev": "npm run clean",
+    "prebuild": "npm run clean",
+    "dev": "babel index.js --watch --out-file demo/ts-browser.js",
+    "demo": "serve -s demo",
+    "build": "babel index.js --out-dir dist",
+    "format": "prettier --write **/*.{js,json,md}",
+    "precommit": "lint-staged",
+    "prepublish": "npm run build"
+  }
+}
