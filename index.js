@@ -21,8 +21,8 @@ const workerFile = window.URL.createObjectURL(
           return xhr.status == 200 ? xhr.responseText : ''
         }
 
-        onmessage = ({data: sourceUrl}) => {
-          const raw = load(sourceUrl)
+        onmessage = ({data: [sourceUrl, sourceCode]}) => {
+          const raw = sourceCode ? sourceCode : load(sourceUrl)
           const transpiled = ts.transpile(raw)
           postMessage(transpiled)
         }
@@ -39,11 +39,12 @@ window.addEventListener('DOMContentLoaded', async () => {
   for (let i = 0; i < scripts.length; i++) {
     if (scripts[i].type === 'text/typescript') {
       const {src} = scripts[i]
+      const innerHtml = src ? null : scripts[i].innerHTML
 
       pending.push(
         new Promise(resolve => {
           const w = new Worker(workerFile)
-          w.postMessage(src)
+          w.postMessage([src, innerHtml])
           w.onmessage = ({data: transpiled}) => {
             const newScript = document.createElement('script')
             newScript.innerHTML = `window.addEventListener('tsTranspiled', function() {
