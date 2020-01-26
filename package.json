@@ -52,6 +52,6 @@
     "build": "babel index.js --out-dir dist && terser dist/index.js -c -m -o dist/index.min.js",
     "format": "prettier --write **/*.{js,json,md}",
     "precommit": "lint-staged",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   }
 }
