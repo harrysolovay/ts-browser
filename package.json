@@ -1,6 +1,6 @@
 {
   "name": "ts-browser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "unpkg": "dist/index.min.js",
   "files": [
     "dist"
